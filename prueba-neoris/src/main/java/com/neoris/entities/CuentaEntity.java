@@ -30,7 +30,7 @@ public class CuentaEntity {
 	@Column(name="saldo_inicial")
 	private double saldoInicial;
 	
-	@Column(name="estado")
-	private String estado;
+	@Column(name="Estado")
+	private boolean estado;
 
 }

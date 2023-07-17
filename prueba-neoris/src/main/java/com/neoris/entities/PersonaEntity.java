@@ -18,7 +18,6 @@ import lombok.ToString;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @ToString
 public class PersonaEntity {
 	

@@ -27,7 +27,7 @@ public class ClienteEntity extends PersonaEntity {
 	@Column(name="Contrasena", length = 30)
 	private String contrasena;
 	
-	@Column(name="Estado", length = 30)
-	private String estado;
+	@Column(name="Estado")
+	private boolean estado;
 
 }
