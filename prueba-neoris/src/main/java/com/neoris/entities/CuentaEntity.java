@@ -3,6 +3,8 @@ package com.neoris.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -33,4 +35,7 @@ public class CuentaEntity {
 	@Column(name="Estado")
 	private boolean estado;
 
+	@ManyToOne
+	@JoinColumn(name = "identificacion")
+	private ClienteEntity cliente;
 }

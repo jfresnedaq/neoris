@@ -90,8 +90,9 @@ public class ClienteServiceImpl implements IClienteService {
 
 	@Override
 	public void delete(int identificacion) {
-		// TODO Auto-generated method stub
-		
+		ClienteEntity clienteActual = findByIdClient(identificacion);
+		clienteRepo.deleteById(clienteActual.getId());
+		personaRepo.deleteById(identificacion);
 	}
 	
 	

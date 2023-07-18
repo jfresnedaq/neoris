@@ -11,15 +11,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 @ToString
-public class ClienteDTO {
-	
-	private int identificacion;
-	private String nombre;
-	private String genero;
-	private int edad;
-	private String direccion;
-	private int telefono;
-	private String contrasena;
-	private boolean estado;
+public class CuentaDTO {
 
+	private int numeroCuenta;
+	private String tipoCuenta;
+	private double saldoInicial;
+	private boolean estado;
+	private int identificacion;
 }

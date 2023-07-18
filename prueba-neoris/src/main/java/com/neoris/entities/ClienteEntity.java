@@ -8,9 +8,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Table(name="cliente")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@ToString
 public class ClienteEntity {
 
 	@Id
@@ -26,36 +36,4 @@ public class ClienteEntity {
 	@ManyToOne
 	@JoinColumn(name = "identificacion")
 	private PersonaEntity persona;
-
-	public String getContrasena() {
-		return contrasena;
-	}
-
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
-	}
-
-	public boolean isEstado() {
-		return estado;
-	}
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
-	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public PersonaEntity getPersona() {
-		return persona;
-	}
-
-	public void setPersona(PersonaEntity persona) {
-		this.persona = persona;
-	}
 }
