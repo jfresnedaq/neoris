@@ -68,13 +68,14 @@ public class CuentasController {
 		return cuentaService.findById(cuenta);
 	}
 	
-	// Eliminar la cuenta
+	// Actualizar la cuenta
 	@PutMapping("/actualizar/{id}")
 	public ResponseEntity<CuentaEntity> update(@RequestBody CuentaEntity cuenta, @PathVariable int id) {
 		return new ResponseEntity<CuentaEntity>(cuentaService.update(cuenta, id), HttpStatus.ACCEPTED);
 	}
 	
-	@DeleteMapping("/{id}")
+	//Eliminar la cuenta
+	@DeleteMapping("/{cuenta}")
 	public void delete (@PathVariable int cuenta) {
 		cuentaService.delete(cuenta);
 	}

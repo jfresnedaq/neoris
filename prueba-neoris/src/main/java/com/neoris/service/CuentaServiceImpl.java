@@ -27,8 +27,8 @@ public class CuentaServiceImpl implements ICuentaService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public CuentaEntity findById(int identificacion) {
-		return cuentaRepo.findById(identificacion).orElse(null);
+	public CuentaEntity findById(int cuenta) {
+		return cuentaRepo.findById(cuenta).orElse(null);
 	}
 
 	@Override

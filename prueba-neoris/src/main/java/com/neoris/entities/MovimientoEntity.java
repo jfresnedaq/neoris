@@ -1,13 +1,12 @@
 package com.neoris.entities;
 
-import java.sql.Date;
-
-import org.hibernate.annotations.GenericGenerator;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,15 +24,13 @@ import lombok.ToString;
 public class MovimientoEntity {
 
 	@Id
-	@Column(length=36)
-	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	private String id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	
 	@Column(name="fecha")
-	private Date fecha;
+	private String fecha;
 	
-	@Column(name="tipo_movimiento", length = 30)
+	@Column(name="tipo_movimiento")
 	private String tipoMovimiento;
 	
 	@Column(name="valor")
@@ -41,5 +38,9 @@ public class MovimientoEntity {
 	
 	@Column(name="saldo")
 	private double saldo;
+	
+	@ManyToOne
+	@JoinColumn(name = "cuenta")
+	private CuentaEntity cuenta;
 	
 }
